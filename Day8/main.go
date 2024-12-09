@@ -14,7 +14,7 @@ type Coord struct {
 }
 
 func (coord Coord) valid(m, n int) bool {
-	return coord.x >= 0 && coord.x < m && coord.y >= 0 && coord.y < m
+	return coord.x >= 0 && coord.x < m && coord.y >= 0 && coord.y < n
 }
 
 func parseGrid(r io.Reader) (map[rune][]Coord, int, int) {
