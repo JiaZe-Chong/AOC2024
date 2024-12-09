@@ -7,6 +7,7 @@ import (
 	"os"
 	"sort"
 	"strconv"
+	"time"
 )
 
 func readInts(r io.Reader) ([]int, []int, error) {
@@ -77,9 +78,14 @@ func main() {
 		panic(err)
 	}
 
+	start1 := time.Now()
 	ans1 := part1(left, right)
-	ans2 := part2(left, right)
+	elapsed1 := time.Since(start1)
 
-	fmt.Printf("Part 1: %d\n", ans1)
-	fmt.Printf("Part 2: %d\n", ans2)
+	start2 := time.Now()
+	ans2 := part2(left, right)
+	elapsed2 := time.Since(start2)
+
+	fmt.Printf("Part 1 ans: %d took: %s\n", ans1, elapsed1)
+	fmt.Printf("Part 2 ans: %d took: %s\n", ans2, elapsed2)
 }

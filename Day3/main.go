@@ -7,6 +7,7 @@ import (
 	"os"
 	"regexp"
 	"strconv"
+	"time"
 )
 
 func readFile(r io.Reader) []string {
@@ -74,9 +75,14 @@ func main() {
 
 	strings := readFile(file)
 
+	start1 := time.Now()
 	ans1 := part1(strings)
-	ans2 := part2(strings)
+	elapsed1 := time.Since(start1)
 
-	fmt.Printf("Part 1: %d\n", ans1)
-	fmt.Printf("Part 2: %d\n", ans2)
+	start2 := time.Now()
+	ans2 := part2(strings)
+	elapsed2 := time.Since(start2)
+
+	fmt.Printf("Part 1 ans: %d time: %s\n", ans1, elapsed1)
+	fmt.Printf("Part 2 ans: %d time: %s\n", ans2, elapsed2)
 }

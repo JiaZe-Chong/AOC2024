@@ -9,6 +9,7 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"time"
 )
 
 func parseRules(r io.Reader) map[int][]int {
@@ -125,9 +126,14 @@ func main() {
 	rules := parseRules(rules_file)
 	updates := parseUpdates(updates_file)
 
+	start1 := time.Now()
 	ans1 := part1(rules, updates)
-	ans2 := part2(rules, updates)
+	elapsed1 := time.Since(start1)
 
-	fmt.Printf("Part 1: %d\n", ans1)
-	fmt.Printf("Part 2: %d\n", ans2)
+	start2 := time.Now()
+	ans2 := part2(rules, updates)
+	elapsed2 := time.Since(start2)
+
+	fmt.Printf("Part 1 ans: %d time: %s\n", ans1, elapsed1)
+	fmt.Printf("Part 2 ans: %d time: %s\n", ans2, elapsed2)
 }
