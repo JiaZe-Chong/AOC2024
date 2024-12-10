@@ -1,3 +1,15 @@
-# AOC2024
+# Advent of Code 2024
 
-My solutions for Advent of Code 2024. All of them will be in `Go` for my learning.
+This will be the repo where I store my AOC solutions,
+
+## Goals
+
+- Learn `Go`.
+- No AI.
+- No external libraries.
+
+## Running the code
+- Clone this repo.
+- Change the current working directory, `cd Day{day number}`
+- Make sure the input files are present
+- Run the main code `go run main.go`
