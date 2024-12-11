@@ -24,9 +24,7 @@ func parseStones(r io.Reader) map[int]int {
 	return stones
 }
 
-func part1(stones map[int]int) int {
-	numBlinks := 25
-
+func blink(stones map[int]int, numBlinks int) int {
 	for i := 0; i < numBlinks; i++ {
 		nextStones := make(map[int]int)
 
@@ -56,36 +54,12 @@ func part1(stones map[int]int) int {
 	return ans
 }
 
+func part1(stones map[int]int) int {
+	return blink(stones, 25)
+}
+
 func part2(stones map[int]int) int {
-	numBlinks := 75
-
-	for i := 0; i < numBlinks; i++ {
-		nextStones := make(map[int]int)
-
-		for stone, num := range stones {
-			if stone == 0 {
-				nextStones[1] += num
-			} else if int(math.Log10(float64(stone)))%2 == 1 {
-				str := strconv.Itoa(stone)
-				left, _ := strconv.Atoi(str[:len(str)/2])
-				right, _ := strconv.Atoi(str[len(str)/2:])
-				nextStones[left] += num
-				nextStones[right] += num
-			} else {
-				nextStones[stone*2024] += num
-			}
-		}
-
-		stones = nextStones
-	}
-
-	ans := 0
-
-	for _, v := range stones {
-		ans += v
-	}
-
-	return ans
+	return blink(stones, 75)
 }
 
 func main() {
