@@ -1,6 +1,6 @@
 # Advent of Code 2024
 
-This will be the repo where I store my AOC solutions,
+This will be the repo where I store my AOC solutions.
 
 ## Goals
 
@@ -10,6 +10,6 @@ This will be the repo where I store my AOC solutions,
 
 ## Running the code
 - Clone this repo.
-- Change the current working directory, `cd Day{day number}`
-- Make sure the input files are present
-- Run the main code `go run main.go`
+- Change the current working directory, `cd Day{day number}`.
+- Make sure the input files are present.
+- Run the main code `go run main.go`.
